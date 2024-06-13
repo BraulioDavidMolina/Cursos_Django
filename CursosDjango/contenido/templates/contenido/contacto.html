@@ -1,10 +1,86 @@
 {% extends 'contenido/encabezado.html' %}
 <!--Todo el codigo ira debajo de la herencia-->
-
 {% block titulo %}Contactanos{% endblock titulo %}
+
+{% block imagen %}
+	{% load static %}
+	{% static 'contenido/images/diablo.png' %}
+{% endblock imagen %}
+{% block sidebar %}Contactanos <span>Te podemos ayudar</span>{% endblock sidebar %}
+{% block encabezado %}
+	<!--Encabezdo -->
+	<div class="page-header">
+		<div class="page-title">
+			<h3>Formulario de contacto
+		    <small>Ingresa tu información</small></h3>
+		</div>			
+		
+	</div>
+	<!-- /Encabezado-->
+{% endblock encabezado %}
+
 {% block contenido %}
+
+		<!-- Formulario -->
+		<form class="form-horizontal" action="#" role="form">
+	        <div class="panel panel-default">
+	            <div class="panel-body">
+			        <div class="form-group">
+			            <label class="col-sm-2 control-label text-right">Nombre:</label>
+			            <div class="col-sm-10">
+			            	<input type="text" class="form-control">
+			            </div>
+			        </div>
+			        
+			        <div class="form-group">
+			            <label class="col-sm-2 control-label text-right">Correo:</label>
+			            <div class="col-sm-10">
+			            	<input type="text" class="form-control">
+			            </div>
+			        </div>
+					<div class="form-group">
+			            <label class="col-sm-2 control-label text-right">Curso:</label>
+			            <div class="col-sm-10">
+			            	<select data-placeholder="Elige una carrera..." class="select" tabindex="2">
+	                            <option value=""></option> 
+	                            <option value="win7">Base de Datos</option> 
+	                            <option value="win8">Programacion</option> 
+	                            <option value="macos">Etc</option> 
+	                    </select>
+			            </div>
+			        </div>
+					<div class="form-group">
+			            <label class="col-sm-2 control-label text-right">Turno:</label>
+			            <div class="col-sm-10">
+			            	<input type="radio" name="turno" class="styled" checked="checked"> Matutino
+										<input type="radio" name="turno" class="styled"> Vespertino
+			            </div>
+			        </div>
+
+					<div class="form-group">
+			            <label class="col-sm-2 control-label text-right">Comentarios:</label>
+			            <div class="col-sm-10">
+			            	<textarea class="form-control" cols="50" rows="10"></textarea>
+			            </div>
+			        </div>
+					
+			        
+                    <div class="form-actions text-right">
+                    	<input type="submit" value="Enviar" class="btn btn-primary">
+                    </div>
+			    </div>
+			</div>
+		</form>
+	<!-- Fin del Formulario -->
+
+{% endblock contenido %}
+
+
+{% comment %} 
+
 <h2>Contacto</h2
     <p>Nombre: <input type="text" name="nombre"/></p>
     <p>Mensaje:</p> <p><textarea cols="50" rows="10"></textarea></p>
     <p><input type="button" name="enviar" value="Enviar" /></p>
-{% endblock contenido %}
+
+ {% endcomment %}

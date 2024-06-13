@@ -1,7 +1,24 @@
 {% extends 'contenido/encabezado.html' %}
 <!--Todo el codigo ira debajo de la herencia-->
-
 {% block titulo %}Principal{% endblock titulo %}
+{% block imagen %}
+	{% load static %}
+	{% static 'contenido/images/home.png' %}
+{% endblock imagen %}
+{% block sidebar %}Princial <span>Pagina principal</span>{% endblock sidebar %}
+{% block encabezado %}
+	<div class="page-header">
+		<div class="page-title">
+			<h3>Pagina de inicio
+		    <small>Bienvenido</small></h3>
+		</div>	
+	</div>
+{% endblock encabezado %}
+
+
 {% block contenido %}
-<center><h1>Hola aqui encontraras cursos</h1></center>
+	<div class="content">
+		This is the content
+	</div>
+
 {% endblock contenido %}

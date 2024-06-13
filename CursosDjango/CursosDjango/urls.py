@@ -23,4 +23,6 @@ urlpatterns = [
     path('', views.PaginaPrincipal, name='Principal'),
     path('cursos/', views.cursos, name='Cursos'),
     path('contacto/', views.contacto, name='Contacto'),
+    path('formulario/', views.formulario, name='Formulario'),
+    path('ejemplo/', views.ejemplo, name='Ejemplo'),
 ]

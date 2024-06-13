@@ -9,3 +9,9 @@ def cursos(request):
 
 def contacto(request):
     return render(request, "contenido/contacto.html")
+
+def formulario(request):
+    return render(request, "contenido/formulario.html")
+
+def ejemplo(request):
+    return render(request, "contenido/ejemplo.html")

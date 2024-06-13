@@ -2,11 +2,25 @@
 <!--Todo el codigo ira debajo de la herencia-->
 
 {% block titulo %}Cursos{% endblock titulo %}
+
+{% block imagen %}
+	{% load static %}
+	{% static 'contenido/images/calidad.png' %}
+{% endblock imagen %}
+{% block sidebar %}Cursos <span>Conoce nuestros cursos</span>{% endblock sidebar %}
+{% block encabezado %}
+    <h3>Cursos Disponibles</h3>
+{% endblock encabezado %}
+
+
 {% block contenido %}
-<h2>Cursos Disponibles</h2>
-    <ul>
-    <li>Base de Datos</li>
-    <li>Programacion</li>
-    <li>Etc</li>
-    </ul>
+
+        <div class="page-title">
+            <ul>
+                <li>Base de Datos</li>
+                <li>Programacion</li>
+                <li>Etc</li>
+            </ul>
+        </div>
+
 {% endblock contenido %}
