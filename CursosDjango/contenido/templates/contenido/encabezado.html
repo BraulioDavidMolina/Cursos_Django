@@ -1,111 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-<title>Plantilla</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Ollie landing page.">
+    <meta name="author" content="Devcrud">
+    <title>{% block titulo %}{% endblock titulo %}</title>
 
-{% load static %} 
-<link href="{% static "contenido/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
-<link href="{% static "contenido/css/londinium-theme.css"%}" rel="stylesheet" type="text/css">
-<link href="{% static "contenido/css/styles.css"%}" rel="stylesheet" type="text/css">
-<link href="{% static "contenido/css/icons.css"%}" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <!-- font icons -->
+	{% load static %}
+    <link rel="stylesheet" href="{%static "contenido/vendors/themify-icons/css/themify-icons.css"%}">
+    
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="{%static  "contenido/vendors/owl-carousel/css/owl.carousel.css"%}">
+    <link rel="stylesheet" href="{%static "contenido/vendors/owl-carousel/css/owl.theme.default.css"%}">
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/charts/sparkline.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/forms/uniform.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/select2.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/inputmask.js"></script>
-<script type="text/javascript" src="js/plugins/forms/autosize.js"></script>
-<script type="text/javascript" src="js/plugins/forms/inputlimit.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/listbox.js"></script>
-<script type="text/javascript" src="js/plugins/forms/multiselect.js"></script>
-<script type="text/javascript" src="js/plugins/forms/validate.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/tags.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/switch.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/forms/uploader/plupload.full.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/uploader/plupload.queue.min.js"></script>
-
-<script type="text/javascript" src="js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
-<script type="text/javascript" src="js/plugins/forms/wysihtml5/toolbar.js"></script>
-
-<script type="text/javascript" src="js/plugins/interface/daterangepicker.js"></script>
-<script type="text/javascript" src="js/plugins/interface/fancybox.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/moment.js"></script>
-<script type="text/javascript" src="js/plugins/interface/jgrowl.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/datatables.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/colorpicker.js"></script>
-<script type="text/javascript" src="js/plugins/interface/fullcalendar.min.js"></script>
-<script type="text/javascript" src="js/plugins/interface/timepicker.min.js"></script>
-
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/application.js"></script>
+    <!-- Bootstrap + Ollie main styles -->
+	<link rel="stylesheet" href="{%static "contenido/css/ollie.css"%}">
 
 </head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-<body>
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="{%static "contenido/imgs/brand.svg"%}"  alt="" class="brand-img"></a>
+            <a class="navbar-toggler" type="a" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </a>
 
-		<div class="page-container">
-
-
-		<!-- Barra de menú -->
-		<div class="sidebar">
-
-
-			<!--Imagen de usuario-->
-			<div class="user-menu dropdown">
-				<a href="#">
-					<img src="{% block imagen %}{% endblock imagen %}">
-					<div class="user-info">
-						{% block sidebar %}{% endblock sidebar %}
-					</div>
-				</a>
-			</div>
-			<!--/Imagen de usuario-->
-
-
-			<div class="sidebar-content">
-				<!-- Menú de navegación -->
-				<ul class="navigation">
-							<li><a href="{%url 'Principal'%}">Principal</a></li>
-							<li><a href="{%url 'Cursos'%}">Cursos</a></li>			
-							<li><a href="{%url 'Contacto'%}">Contacto</a></li>			
-				</ul>
-				<!-- /Fin menú -->
-			</div>
-		</div>
-		<!-- /sidebar -->
-	</div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'Principal'%}">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{%url 'Cursos'%}">Cursos</a>
+                    </li>
+                    <li class="nav-item ml-0 ml-lg-4">
+                        <a class="nav-link btn btn-primary" href="{%url 'Contacto'%}">Contacto</a>
+                    </li>					
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
-	<!-- Contenido Principal-->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+            <div class="container">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">Cursos de <br> Bases de Datos</h1>
+                            <a href="{%url 'Contacto'%}" class="btn btn-primary">Saber mas...</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">Cursos de <br> Programacion</h1>
+                            <a class="btn btn-primary btn-rounded" href="{%url 'Contacto'%}">Saber mas...</a>
+                          </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">Cursos de <br> Redes</h1>
+                            <a class="btn btn-primary btn-rounded" href="{%url 'Contacto'%}">Saber mas...</a>
+                          </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+        <div class="infos container mb-4 mb-md-2">
+            <div class="title">
+                <h6 class="subtitle font-weight-normal">Siempre buscamos nuevos talentos</h6>
+                <h5>¿Quieres aprender?</h5>
+                <p class="font-small">Unete a nuetro equipo y toma nuestros cursos</p>
+            </div>
+            <div class="socials text-right">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <a class="d-block subtitle"><i class="ti-microphone pr-2"></i> (123) 456-7890</a>
+                        <a class="d-block subtitle"><i class="ti-email pr-2"></i> info@website.com</a>
+                    </div>
+                    <div class="col">
+                        <h6 class="subtitle font-weight-normal mb-2">Social Media</h6>
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-google"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-pinterest-alt"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-rss"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	<!-- core  -->
+	{% load static %}
+    <script src="{%static "contenido/vendors/jquery/jquery-3.4.1.js"%}"></script>
+    <script src="{%static "contenido/vendors/bootstrap/bootstrap.bundle.js"%}"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="{%static "contenido/vendors/bootstrap/bootstrap.affix.js"%}"></script>
+    
+    <!-- Owl carousel  -->
+    <script src="{%static "contenido/vendors/owl-carousel/js/owl.carousel.js"%}"></script>
+
+
+    <!-- Ollie js -->
+    <script src="{%static "contenido/js/Ollie.js"%}"></script>
+
+
 	<div class="page-content">
-	{% block encabezado %}{% endblock encabezado %}
-		<!--Barra de navegacion-->
-		<div class="breadcrumb-line">
-			<ul class="breadcrumb">
-				<a href="{%url 'Principal'%}">
-					{%if request.path == '/'%}
-						Principal
-					{%else%}
-						Principal{{request.path}}
-					{%endif%}
-				</a>
-			</ul>
-		</div>
-		<!--/Barra de navegacion-->
 		{% block contenido %}
-    	
-    	{% endblock  %}
-
+		{% endblock contenido %}
 	</div>
-	<!-- /Contenido Principal-->
+
 
 
 </body>
