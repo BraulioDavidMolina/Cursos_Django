@@ -1,0 +1,35 @@
+{% extends 'contenido/encabezado.html' %}
+{% block titulo %}Cursos{% endblock titulo %}
+
+
+{% block contenido %}
+    <section class="section" id="about">
+
+        <div class="container">
+                <div class="col-md-4">
+                    <h6 class="xs-font mb-0">Bienvenidos a</h6>
+                    <h3 class="section-title">Cursos</h3>
+                    <p>Aqui encontraras los cursos que se encuentran disponibles</p>
+                    {% comment %} <a href="javascript:void(0)">Read more...</a> {% endcomment %}
+                </div>
+                <!--Inicio de ciclo-->
+                {%for curso in cursos%}
+                <div class="col-sm-6 col-md-9">
+                    <div class="widget row align-items-center mr-auto">
+                        <div class="icon-wrapper">
+                            {% comment %} <i class="ti-face-smile"></i> {% endcomment %}
+                            <img src="{{curso.imagen.url}}" alt="{{curso.nombre}}" width="50px" height="50px">
+                        </div>
+                        <div class="infos-wrapper">
+                            <h4 class="text-primary">{{curso.nombre}}</h4>
+                            <p>{{curso.duracion}} meses</p>
+                        </div>
+                    </div>
+                </div>
+                <!--Final de ciclo-->
+                {%endfor%}
+             </div>
+        </div>
+    </section>
+
+{% endblock contenido %}

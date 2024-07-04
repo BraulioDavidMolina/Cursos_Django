@@ -27,6 +27,12 @@ urlpatterns = [
     path('contacto/', views.contacto, name='Contacto'),
     path('formulario/', views.formulario, name='Formulario'),
     path('ejemplo/', views.ejemplo, name='Ejemplo'),
+    #
+    path('consultas1/', views_cursos.consultar1, name='Consultar1'),
+    path('consultas2/', views_cursos.consultar2, name='Consultar2'),
+    path('consultas3/', views_cursos.consultar3, name='Consultar3'),
+    path('consultas4/', views_cursos.consultar4, name='Consultar4'),
+    
 ]
 
 
